@@ -1,4 +1,5 @@
 import torch
+import timm
 import cv2
 import numpy as np
 from collections import Counter
