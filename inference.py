@@ -5,12 +5,15 @@ from collections import Counter
 from torchvision import transforms
 from PIL import Image
 
-MODEL_PATH = "gait_model_full.pt"
+MODEL_PATH = "gait_xception_model_overall123_subjects.pth"
 
 device = torch.device("cpu")
+model = timm.create_model('xception', pretrained=False, num_classes=123)
 
-# Load full trained Xception model
-model = torch.load(MODEL_PATH, map_location=device)
+# Load weights
+state_dict = torch.load(MODEL_PATH, map_location=device)
+model.load_state_dict(state_dict)
+
 model.eval()
 
 # EXACT SAME TRANSFORM AS TRAINING
