@@ -5,7 +5,7 @@ from collections import Counter
 from torchvision import transforms
 from PIL import Image
 
-MODEL_PATH = "gait_xception_model_overall123_subjects.pth"
+MODEL_PATH = "gait_xception_model_final123_subjects.pth"
 
 device = torch.device("cpu")
 model = timm.create_model('xception', pretrained=False, num_classes=123)
